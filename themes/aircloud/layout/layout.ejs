@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- partial('_partial/head') %>
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> <%= config.subtitle %> </i>
+</div>
+
+<div class="index-container">
+    <% if(!is_current('/404')){%>
+    <div class="index-left">
+        <%- partial('_partial/nav', null, {cache: false}) %>
+        <div class="index-about-mobile">
+            <i> <%= config.subtitle %> </i>
+        </div>
+    </div>
+    <% } %>
+    <div class="index-middle">
+        <!-- Main Content -->
+        <%- body %>
+    </div>
+</div>
+
+<%- partial('_partial/footer', null, {cache: false}) %>
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "<%- config.search ? config.search.path : ""%>"
+    window.hexo_root = "<%- config.root %>"
+    window.isPost = <%- is_post() %>
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<%- js('js/index.js') %>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<%if( (is_post() || is_current('about')) && config.comment && config.comment.type === 'gitment'){%>
+<%- js('js/gitment.js') %>
+<script>
+    var gitment = new Gitment({
+        id: '<%- page.title %>',
+        owner: '<%- config.comment.owner %>',
+        repo: '<%- config.comment.repo %>',
+        oauth: {
+            client_id: '<%- config.comment.id %>',
+            client_secret: '<%- config.comment.secret %>',
+        },
+    })
+    gitment.render('comment-container')
+</script>
+<%}%>
+<%if( (is_post() || is_current('about')) && config.comment && config.comment.type === 'disqus'){%>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '<%- config.comment.url %>' || '<%- config.comment.identifier %>')
+        var disqus_config = function () {
+            this.page.url = '<%- config.comment.url %>';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = '<%- config.comment.identifier %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = '<%- config.comment.script %>';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+<% } %>
+
+<%if( (is_post() || is_current('about')) && config.comment && config.comment.type === 'livere'){%>
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','<%- config.comment.livere_id %>');
+           d.setAttribute('data-uid' , '<%- config.comment.livere_uid %>');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+<% } %>
+</html>
