@@ -81,12 +81,12 @@ private int binarySearch(int[] nums, int target) {
 
 项目 | 代码
 --- | ---
-左指针 | `left = 0`
-右指针 | `right = length - 1`
-循环条件 | `left <= right`
-左指针移动 | `left = mid + 1`
-右指针移动 | `right = mid - 1`
-最终判断 | `无`
+左指针 | left = 0
+右指针 | right = length - 1
+循环条件 | left <= right
+左指针移动 | left = mid + 1
+右指针移动 | right = mid - 1
+最终判断 | 无
 
 这个模板在退出循环时，left与right会交错而过(即left - 1 == right)，此时所有可能项目都查找过了，所以不需要额外的操作。
 
@@ -95,12 +95,12 @@ private int binarySearch(int[] nums, int target) {
 
 项目 | 代码
 --- | ---
-左指针 | `left = 0`
-右指针 | `right = length`
-循环条件 | `left < right`
-左指针移动 | `left = mid + 1`
-右指针移动 | `right = mid`
-最终判断 | `left是否是target？`
+左指针 | left = 0
+右指针 | right = length
+循环条件 | left < right
+左指针移动 | left = mid + 1
+右指针移动 | right = mid
+最终判断 | left是否是target？
 
 模板2的right初始值需要注意一下，是length，这是为了配合left < right这个循环条件。
 
@@ -111,12 +111,12 @@ private int binarySearch(int[] nums, int target) {
 
 项目 | 代码
 --- | ---
-左指针 | `left = 0`
-右指针 | `right = length - 1`
-循环条件 | `left + 1 < right`
-左指针移动 | `left = mid`
-右指针移动 | `right = mid`
-最终判断 | `left是否是target？right是否是target？`
+左指针 | left = 0
+右指针 | right = length - 1
+循环条件 | left + 1 < right
+左指针移动 | left = mid
+右指针移动 | right = mid
+最终判断 | left是否是target？right是否是target？
 
 模板3在退出循环的时候，left + 1 == right，也就是查找到了最后2个项目，这两个项目没有在循环中判断过，所以最终判断时需要分别看一下left和right是否是target
 
@@ -125,14 +125,14 @@ private int binarySearch(int[] nums, int target) {
 
 上面介绍了3种模板，他们的核心区别是
 
-项目 | 模板1 | 模板2 | 模板3
+<div style="width: 80px">项目</div> | <div style="width: 33%">模板1</div> | <div style="width: 33%">模板2</div> | <div style="width: 33%">模板3</div>
 --- | --- | --- | ---
-左指针 | `left = 0` | `left = 0` | `left = 0`
-右指针 | `right = length - 1` | `right = length` | `right = length - 1`
-循环条件 | `left <= right` | `left < right` | `left + 1 < right`
-左指针移动 | `left = mid + 1` | `left = mid + 1` | `left = mid`
-右指针移动 | `right = mid - 1` | `right = mid` | `right = mid`
-最终判断 | `无` | `left是否在界限内，是不是target？` | `left是否是target？right是不是target？`
+左指针 | left = 0 | left = 0 | left = 0
+右指针 | right = length - 1 | right = length | right = length - 1
+循环条件 | left <= right | left < right | left + 1 < right
+左指针移动 | left = mid + 1 | left = mid + 1 | left = mid
+右指针移动 | right = mid - 1 | right = mid | right = mid
+最终判断 | 无 | left是否在界限内，是不是target？ | left是否是target？right是不是target？
 核心区别 | 便于解决只需要通过元素本身就能判断是否为目标的问题 | 便于解决需要元素本身及邻居来判断是否为目标的问题 | 模板1、2的加强版，万能模板
 
 

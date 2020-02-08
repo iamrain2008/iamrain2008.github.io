@@ -620,6 +620,10 @@ body {
 .post-content > table tr td {
   border: 1px solid #e7e8e9;
 }
+.post-content table td,
+.post-content table th {
+  padding: 4px;
+}
 .post-content table {
   border-collapse: collapse;
 }

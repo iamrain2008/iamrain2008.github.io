@@ -78,7 +78,11 @@ search:
 
 # 文章样式(是否首行缩进)：
 post_style:
-  indent: default
+  indent: 0
+
+# 头像是否圆角显示
+avatar_style:
+  radius: true
 
 # Custom Setting End
 
