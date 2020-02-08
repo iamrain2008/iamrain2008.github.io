@@ -39,7 +39,7 @@
 </div>
 
 <div class="index-about">
-    <i> 欢迎来到民风淳朴的雅楠村 </i>
+    <i> Nothing is impossible for a willing heart </i>
 </div>
 
 <div class="index-container">
@@ -48,7 +48,7 @@
         
 <div class="nav" id="nav">
     <div class="avatar-name">
-        <div class="avatar ">
+        <div class="avatar radius">
             <img src="/img/avatar.jpg" />
         </div>
         <div class="name">
@@ -113,7 +113,7 @@
 </div>
 
         <div class="index-about-mobile">
-            <i> 欢迎来到民风淳朴的雅楠村 </i>
+            <i> Nothing is impossible for a willing heart </i>
         </div>
     </div>
     
@@ -147,7 +147,7 @@
 </span>
 </span>
     </div>
-    <div class="post-content ">
+    <div class="post-content no-indent">
         <h2 id="二分法的本质"><a href="#二分法的本质" class="headerlink" title="二分法的本质"></a>二分法的本质</h2><p>二分法通常用于在有序的集合中查找目标。通过O(1)的操作，将规模为<code>n</code>的问题分解为<code>n/2</code>，最终时间复杂度是<code>log(n)</code>。通常要求做到<code>log(n)</code>的时间复杂度，基本上都是二分法。</p>
 <h2 id="二分法的痛点"><a href="#二分法的痛点" class="headerlink" title="二分法的痛点"></a>二分法的痛点</h2><ul>
 <li>死循环<ul>
@@ -173,27 +173,27 @@
 </thead>
 <tbody><tr>
 <td>左指针</td>
-<td><code>left = 0</code></td>
+<td>left = 0</td>
 </tr>
 <tr>
 <td>右指针</td>
-<td><code>right = length - 1</code></td>
+<td>right = length - 1</td>
 </tr>
 <tr>
 <td>循环条件</td>
-<td><code>left &lt;= right</code></td>
+<td>left &lt;= right</td>
 </tr>
 <tr>
 <td>左指针移动</td>
-<td><code>left = mid + 1</code></td>
+<td>left = mid + 1</td>
 </tr>
 <tr>
 <td>右指针移动</td>
-<td><code>right = mid - 1</code></td>
+<td>right = mid - 1</td>
 </tr>
 <tr>
 <td>最终判断</td>
-<td><code>无</code></td>
+<td>无</td>
 </tr>
 </tbody></table>
 <p>这个模板在退出循环时，left与right会交错而过(即left - 1 == right)，此时所有可能项目都查找过了，所以不需要额外的操作。</p>
@@ -206,27 +206,27 @@
 </thead>
 <tbody><tr>
 <td>左指针</td>
-<td><code>left = 0</code></td>
+<td>left = 0</td>
 </tr>
 <tr>
 <td>右指针</td>
-<td><code>right = length</code></td>
+<td>right = length</td>
 </tr>
 <tr>
 <td>循环条件</td>
-<td><code>left &lt; right</code></td>
+<td>left &lt; right</td>
 </tr>
 <tr>
 <td>左指针移动</td>
-<td><code>left = mid + 1</code></td>
+<td>left = mid + 1</td>
 </tr>
 <tr>
 <td>右指针移动</td>
-<td><code>right = mid</code></td>
+<td>right = mid</td>
 </tr>
 <tr>
 <td>最终判断</td>
-<td><code>left是否是target？</code></td>
+<td>left是否是target？</td>
 </tr>
 </tbody></table>
 <p>模板2的right初始值需要注意一下，是length，这是为了配合left &lt; right这个循环条件。</p>
@@ -240,27 +240,27 @@
 </thead>
 <tbody><tr>
 <td>左指针</td>
-<td><code>left = 0</code></td>
+<td>left = 0</td>
 </tr>
 <tr>
 <td>右指针</td>
-<td><code>right = length - 1</code></td>
+<td>right = length - 1</td>
 </tr>
 <tr>
 <td>循环条件</td>
-<td><code>left + 1 &lt; right</code></td>
+<td>left + 1 &lt; right</td>
 </tr>
 <tr>
 <td>左指针移动</td>
-<td><code>left = mid</code></td>
+<td>left = mid</td>
 </tr>
 <tr>
 <td>右指针移动</td>
-<td><code>right = mid</code></td>
+<td>right = mid</td>
 </tr>
 <tr>
 <td>最终判断</td>
-<td><code>left是否是target？right是否是target？</code></td>
+<td>left是否是target？right是否是target？</td>
 </tr>
 </tbody></table>
 <p>模板3在退出循环的时候，left + 1 == right，也就是查找到了最后2个项目，这两个项目没有在循环中判断过，所以最终判断时需要分别看一下left和right是否是target</p>
@@ -268,47 +268,47 @@
 <table>
 <thead>
 <tr>
-<th>项目</th>
-<th>模板1</th>
-<th>模板2</th>
-<th>模板3</th>
+<th><div style="width: 80px">项目</div></th>
+<th><div style="width: 33%">模板1</div></th>
+<th><div style="width: 33%">模板2</div></th>
+<th><div style="width: 33%">模板3</div></th>
 </tr>
 </thead>
 <tbody><tr>
 <td>左指针</td>
-<td><code>left = 0</code></td>
-<td><code>left = 0</code></td>
-<td><code>left = 0</code></td>
+<td>left = 0</td>
+<td>left = 0</td>
+<td>left = 0</td>
 </tr>
 <tr>
 <td>右指针</td>
-<td><code>right = length - 1</code></td>
-<td><code>right = length</code></td>
-<td><code>right = length - 1</code></td>
+<td>right = length - 1</td>
+<td>right = length</td>
+<td>right = length - 1</td>
 </tr>
 <tr>
 <td>循环条件</td>
-<td><code>left &lt;= right</code></td>
-<td><code>left &lt; right</code></td>
-<td><code>left + 1 &lt; right</code></td>
+<td>left &lt;= right</td>
+<td>left &lt; right</td>
+<td>left + 1 &lt; right</td>
 </tr>
 <tr>
 <td>左指针移动</td>
-<td><code>left = mid + 1</code></td>
-<td><code>left = mid + 1</code></td>
-<td><code>left = mid</code></td>
+<td>left = mid + 1</td>
+<td>left = mid + 1</td>
+<td>left = mid</td>
 </tr>
 <tr>
 <td>右指针移动</td>
-<td><code>right = mid - 1</code></td>
-<td><code>right = mid</code></td>
-<td><code>right = mid</code></td>
+<td>right = mid - 1</td>
+<td>right = mid</td>
+<td>right = mid</td>
 </tr>
 <tr>
 <td>最终判断</td>
-<td><code>无</code></td>
-<td><code>left是否在界限内，是不是target？</code></td>
-<td><code>left是否是target？right是不是target？</code></td>
+<td>无</td>
+<td>left是否在界限内，是不是target？</td>
+<td>left是否是target？right是不是target？</td>
 </tr>
 <tr>
 <td>核心区别</td>
@@ -397,6 +397,8 @@
     
     <p>
         <span>/</span>
+        <span>雨霏的朋友们</span>
+        <span>:</span>
         
         <span><a href="https://hakuless.github.io/" target="_blank" rel="noopener">HakuLess</a></span>
         <span>/</span>
