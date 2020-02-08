@@ -4,7 +4,7 @@
 
 # Site
 title: 'I am Rain'
-subtitle: '欢迎来到民风淳朴的雅楠村'
+subtitle: 'Nothing is impossible for a willing heart'
 description: '黄雨霏的博客，主要聊聊算法、Android、Java、Javascript、Vue、React等内容'
 keywords: Algorithm, Java, Android, Javascript, js, vue, react
 author: 黄雨霏
@@ -15,7 +15,7 @@ timezone: 'Asia/Shanghai'
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://huangyufei.cn
 root: /
-permalink: :title/
+permalink: :year/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -28,8 +28,6 @@ pretty_urls:
 # 网站综合内容设置：
 SEOTitle: 黄雨霏的博客，主要聊聊算法、Android、Java、Javascript、Vue、React等内容
 email: iamrain2008@gmail.com
-# description: "黄雨霏的博客，主要聊聊算法、Android、Java、Javascript、Vue、React等内容"
-# keyword: "Algorithm, Java, Android, Javascript, js, vue, react"
 
 # SNS settings
 # 一些社交平台地址，支持以下几种：
