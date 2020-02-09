@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="黄雨霏的博客，主要聊聊算法、Android、Java、Javascript、Vue、React等内容">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        二叉树算法从入门到精通 - 黄雨霏的博客，主要聊聊算法、Android、Java、Javascript、Vue、React等内容
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Nothing is impossible for a willing heart </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>黄雨霏</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#3种遍历顺序"><span class="toc-text">3种遍历顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2种遍历策略"><span class="toc-text">2种遍历策略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#深度优先遍历"><span class="toc-text">深度优先遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用递归实现"><span class="toc-text">用递归实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分治法"><span class="toc-text">分治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#遍历法"><span class="toc-text">遍历法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用非递归实现"><span class="toc-text">用非递归实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#广度优先遍历"><span class="toc-text">广度优先遍历</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#特殊的二叉树"><span class="toc-text">特殊的二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉搜索树"><span class="toc-text">二叉搜索树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#红黑树"><span class="toc-text">红黑树</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多叉树"><span class="toc-text">多叉树</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Nothing is impossible for a willing heart </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        二叉树算法从入门到精通
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-02-09 15:20:52</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#leetcode" title="leetcode">leetcode</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#binary tree" title="binary tree">binary tree</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="3种遍历顺序"><a href="#3种遍历顺序" class="headerlink" title="3种遍历顺序"></a>3种遍历顺序</h1><p>二叉树遍历算法，根据根节点相对于左节点、右节点的不同访问顺序，分为<code>前序遍历(Pre-Order Traversal)</code>、<code>中序遍历(In-Order Traversal)</code>、<code>后序遍历(Post-Order Traversal)</code>。</p>
+<ul>
+<li>前序遍历：根节点第一个访问：根-左-右；</li>
+<li>中序遍历：根节点第二个访问：左-根-右；</li>
+<li>后序遍历：根节点最后访问：左-右-根。</li>
+</ul>
+<p>示例，假设有这样一个树：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">      <span class="number">1</span></span><br><span class="line">     / \</span><br><span class="line">    /   \</span><br><span class="line">   <span class="number">2</span>     <span class="number">3</span></span><br><span class="line">  / \   / \</span><br><span class="line"> /   \ /   \</span><br><span class="line"><span class="number">4</span>    <span class="number">5</span> <span class="number">6</span>    <span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>前序遍历：1-2-4-5-3-6-7</li>
+<li>中序遍历：4-2-5-1-6-3-7</li>
+<li>后序遍历：4-5-2-6-7-3-1</li>
+</ul>
+<p>用递归实现的3种遍历是这样的：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 这是我们的TreeNode的定义，后面所有例子用的TreeNode都是这样。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">class</span> TreeNode &#123;</span><br><span class="line">    <span class="built_in">int</span> <span class="keyword">val</span>;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line"></span><br><span class="line">    <span class="constructor">TreeNode(<span class="params">int</span> <span class="params">x</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">val</span> = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 前序遍历</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public void tree<span class="constructor">Traversal(TreeNode <span class="params">root</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root<span class="operator"> == </span>null) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (root.<span class="keyword">val</span> is target) &#123;</span><br><span class="line">        <span class="keyword">do</span> something</span><br><span class="line">    &#125;</span><br><span class="line">    tree<span class="constructor">Traversal(<span class="params">root</span>.<span class="params">left</span>)</span>;</span><br><span class="line">    tree<span class="constructor">Traversal(<span class="params">root</span>.<span class="params">right</span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 中序遍历</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public void tree<span class="constructor">Traversal(TreeNode <span class="params">root</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root<span class="operator"> == </span>null) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    tree<span class="constructor">Traversal(<span class="params">root</span>.<span class="params">left</span>)</span>;</span><br><span class="line">    <span class="keyword">if</span> (root.<span class="keyword">val</span> is target) &#123;</span><br><span class="line">        <span class="keyword">do</span> something</span><br><span class="line">    &#125;</span><br><span class="line">    tree<span class="constructor">Traversal(<span class="params">root</span>.<span class="params">right</span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 后序遍历</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public void tree<span class="constructor">Traversal(TreeNode <span class="params">root</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root<span class="operator"> == </span>null) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    tree<span class="constructor">Traversal(<span class="params">root</span>.<span class="params">left</span>)</span>;</span><br><span class="line">    tree<span class="constructor">Traversal(<span class="params">root</span>.<span class="params">right</span>)</span>;</span><br><span class="line">    <span class="keyword">if</span> (root.<span class="keyword">val</span> is target) &#123;</span><br><span class="line">        <span class="keyword">do</span> something</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="2种遍历策略"><a href="#2种遍历策略" class="headerlink" title="2种遍历策略"></a>2种遍历策略</h1><p>树的遍历分为深度优先遍历和广度优先遍历。</p>
+<h2 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h2><p>深度优先(Depth First Search, DFS)的意思就是，先一条道走到黑，走到不能再走了，再回过头了遍历其他。<br>下面用一个最简单的例子来说明不同的深度优先遍历。</p>
+<blockquote>
+<p><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank" rel="noopener">LeetCode 104. Maximum Depth of Binary Tree</a></p>
+</blockquote>
+<p>深度优先遍历大致分为递归实现和非递归实现，递归实现又分为分治法实现和遍历法实现。</p>
+<h3 id="用递归实现"><a href="#用递归实现" class="headerlink" title="用递归实现"></a>用递归实现</h3><h4 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h4><p>最常见，最好理解的方法，就是分治法。左右叶子节点返回它们自身的深度，取大的那个深度，+1再返回。</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public <span class="built_in">int</span> max<span class="constructor">Depth(TreeNode <span class="params">root</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root<span class="operator"> == </span>null) &#123;</span><br><span class="line">        return <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">int</span> left = max<span class="constructor">Depth(<span class="params">root</span>.<span class="params">left</span>)</span>;</span><br><span class="line">    <span class="built_in">int</span> right = max<span class="constructor">Depth(<span class="params">root</span>.<span class="params">right</span>)</span>;</span><br><span class="line">    return <span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>max(left, right) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="遍历法"><a href="#遍历法" class="headerlink" title="遍历法"></a>遍历法</h4><p>遍历法与分治法的本质区别是，分治法有个回归的过程，而遍历法没有。</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> maxDepth;</span><br><span class="line"></span><br><span class="line">public <span class="built_in">int</span> max<span class="constructor">Depth(TreeNode <span class="params">root</span>)</span> &#123;</span><br><span class="line">    maxDepth = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (root<span class="operator"> == </span>null) &#123;</span><br><span class="line">        return maxDepth;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 当前的深度为1，开始遍历</span></span><br><span class="line">    calculate<span class="constructor">TreeDepth(<span class="params">root</span>, 1)</span>;</span><br><span class="line">    <span class="comment">// 返回最终结果</span></span><br><span class="line">    return maxDepth;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void calculate<span class="constructor">TreeDepth(TreeNode <span class="params">treeNode</span>, <span class="params">int</span> <span class="params">currentDepth</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (treeNode<span class="operator"> == </span>null) &#123;</span><br><span class="line">        <span class="comment">// 如果当前节点是null就什么都不做</span></span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果当前节点的深度大于已记录的最大深度，更新最大深度</span></span><br><span class="line">    <span class="keyword">if</span> (currentDepth &gt; maxDepth) &#123;</span><br><span class="line">        maxDepth = currentDepth;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历左右子树，进入左右子树时的深度是当前深度+1，如果子树是null则不会更新maxDepth</span></span><br><span class="line">    calculate<span class="constructor">TreeDepth(<span class="params">treeNode</span>.<span class="params">left</span>, <span class="params">currentDepth</span> + 1)</span>;</span><br><span class="line">    calculate<span class="constructor">TreeDepth(<span class="params">treeNode</span>.<span class="params">right</span>, <span class="params">currentDepth</span> + 1)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="用非递归实现"><a href="#用非递归实现" class="headerlink" title="用非递归实现"></a>用非递归实现</h3><p>非递归（即迭代法）实现需要借助<code>栈</code>这个数据结构，实现方法比递归的麻烦一些，但很重要，一定要理解它的实现原理。<br>还是以上面的计算树的最大深度为例子（其实更好的做法是广度优先遍历，这里只是为了展示非递归的实现）。</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> int maxDepthDfsNonRecursion(TreeNode root) &#123;</span><br><span class="line">    int maxDepth = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="built_in">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> maxDepth;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Pair: key - TreeNode, value - int, current depth</span></span><br><span class="line">    <span class="built_in">Stack</span>&lt;<span class="built_in">Pair</span>&lt;TreeNode, <span class="built_in">Integer</span>&gt;&gt; <span class="built_in">stack</span> = <span class="literal">new</span> <span class="built_in">Stack</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">// Push root node to stack</span></span><br><span class="line">    <span class="built_in">stack</span>.push(<span class="literal">new</span> <span class="built_in">Pair</span>&lt;&gt;(root, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">stack</span>.isEmpty()) &#123;</span><br><span class="line">        <span class="built_in">Pair</span>&lt;TreeNode, <span class="built_in">Integer</span>&gt; <span class="built_in">pair</span> = <span class="built_in">stack</span>.pop();</span><br><span class="line">        TreeNode node = <span class="built_in">pair</span>.getKey();</span><br><span class="line">        int currentDepth = <span class="built_in">pair</span>.getValue();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Leaf, save the max depth</span></span><br><span class="line">        <span class="keyword">if</span> (node.left == <span class="built_in">null</span> &amp;&amp; node.right == <span class="built_in">null</span> &amp;&amp; currentDepth &gt; maxDepth) &#123;</span><br><span class="line">            maxDepth = currentDepth;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (node.right != <span class="built_in">null</span>) &#123;</span><br><span class="line">            <span class="built_in">stack</span>.push(<span class="literal">new</span> <span class="built_in">Pair</span>&lt;&gt;(node.right, currentDepth + <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (node.left != <span class="built_in">null</span>) &#123;</span><br><span class="line">            <span class="built_in">stack</span>.push(<span class="literal">new</span> <span class="built_in">Pair</span>&lt;&gt;(node.left, currentDepth + <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxDepth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h2><p>广度优先(Breadth First Search, BFS)的意思就是，优先遍历当前节点的所有子节点，不管子节点还有没有孙子节点。再一层一层向下遍历。</p>
+<p>通常需要借助<code>队列</code>来完成遍历，思路是：记录当前层的数量，开始遍历，将叶子节点放入队列，当遍历的数量等于当前层数量时，说明当前层已经遍历完了；检查队列是否为空，不为空说明还有下层，继续重复刚才的操作；知道全部遍历完成。</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepthBfs</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxDepth = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (root == null) &#123;</span><br><span class="line">        <span class="keyword">return</span> maxDepth;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 建立队列辅助计算，并添加根元素</span></span><br><span class="line">    Queue&lt;TreeNode&gt; <span class="built_in">queue</span> = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="built_in">queue</span>.offer(root);</span><br><span class="line">    <span class="comment">// 队列不空就开始遍历</span></span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">queue</span>.isEmpty()) &#123;</span><br><span class="line">        <span class="comment">// 记录当前层一共有多少个元素</span></span><br><span class="line">        <span class="keyword">int</span> currentLevelSize = <span class="built_in">queue</span>.<span class="built_in">size</span>();</span><br><span class="line">        <span class="comment">// 记录已经查看了多少个元素</span></span><br><span class="line">        <span class="keyword">int</span> visitedSize = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 开始遍历当前层</span></span><br><span class="line">        <span class="keyword">while</span> (visitedSize &lt; currentLevelSize) &#123;</span><br><span class="line">            TreeNode node = <span class="built_in">queue</span>.poll();</span><br><span class="line">            <span class="keyword">if</span> (node != null) &#123;</span><br><span class="line">                <span class="keyword">if</span> (node.left != null) &#123;</span><br><span class="line">                    <span class="comment">// 有左叶子节点，则加入队列</span></span><br><span class="line">                    <span class="built_in">queue</span>.offer(node.left);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (node.right != null) &#123;</span><br><span class="line">                    <span class="comment">// 有右叶子节点，则加入队列</span></span><br><span class="line">                    <span class="built_in">queue</span>.offer(node.right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 处理当前node的值，本例中无需处理</span></span><br><span class="line">            <span class="comment">// 记录我们看过一个元素了，当当前层所有元素都看过之后，会退出当前while循环</span></span><br><span class="line">            visitedSize++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 遍历完一层的时候，最大深度+1，如果下层还有元素，则会继续遍历</span></span><br><span class="line">        maxDepth++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 所有节点遍历完成，返回结果</span></span><br><span class="line">    <span class="keyword">return</span> maxDepth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="特殊的二叉树"><a href="#特殊的二叉树" class="headerlink" title="特殊的二叉树"></a>特殊的二叉树</h1><h2 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h2><h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><h1 id="多叉树"><a href="#多叉树" class="headerlink" title="多叉树"></a>多叉树</h1><blockquote>
+<p>未完待续</p>
+</blockquote>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/iamrain2008">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://www.linkedin.com/in/yufei-huang-13750993">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        <span>雨霏的朋友们</span>
+        <span>:</span>
+        
+        <span><a href="https://hakuless.github.io/" target="_blank" rel="noopener">HakuLess</a></span>
+        <span>/</span>
+        
+        <span><a href="https://kyangc.com/" target="_blank" rel="noopener">阿阳的自留地</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
