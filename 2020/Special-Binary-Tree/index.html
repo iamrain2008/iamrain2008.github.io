@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="黄雨霏的博客，主要聊聊算法、Android、Java、Javascript、Vue、React等内容">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        特殊的二叉树 - 黄雨霏的博客，主要聊聊算法、Android、Java、Javascript、Vue、React等内容
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Nothing is impossible for a willing heart </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>黄雨霏</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二叉搜索树"><span class="toc-text">二叉搜索树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#特性"><span class="toc-text">特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找"><span class="toc-text">查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入"><span class="toc-text">插入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除"><span class="toc-text">删除</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#红黑树"><span class="toc-text">红黑树</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Nothing is impossible for a willing heart </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        特殊的二叉树
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-03-08 16:26:27</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#leetcode" title="leetcode">leetcode</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#binary tree" title="binary tree">binary tree</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#n-ary tree" title="n-ary tree">n-ary tree</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#binary search tree" title="binary search tree">binary search tree</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>二叉搜索树是一种特殊的二叉树，它具有这样的性质：每个节点中的值必须大于（或等于）其左侧子树中的任何值，但小于（或等于）其右侧子树中的任何值。等于这个条件视情况而定，通常根据题目的要求来。</p>
+<p>由于这样的特性，我们采用中序遍历的时候，会得到一个有序的排列，所以很多二叉搜索树的问题会用到中序遍历。</p>
+<p>例子：</p>
+<ul>
+<li><a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank" rel="noopener">LeetCode 98. Validate Binary Search Tree</a> </li>
+</ul>
+<p>题目要求验证一个树是二叉搜索树。如果用普通的递归思想，验证左树是不是 &amp;&amp; 验证右树是不是，会掉入题目的陷阱，即可能出现左树是二叉搜索树，右树也是，但左树有比当前节点更大的数值，或者右树有比节点更小的数字。这时候你就要额外的去记录左侧最大值和右侧最小值，它们必须小于和大于当前节点的值。</p>
+<p>这时候我们换个思路，我们用中序遍历把值都放进一个数组，这个数组是有序的，则说明这是一个合格的二叉搜索树。当然也可以优化一下，每次遍历的节点都必然比上一个遍历的节点大。</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    // 记录上一个访问过的节点的值</span><br><span class="line">    private Integer previousNodeVal = null;</span><br><span class="line">    </span><br><span class="line">    public boolean isValidBST(TreeNode <span class="keyword">node</span><span class="title">) &#123;</span></span><br><span class="line"><span class="title">        if</span> (<span class="keyword">node</span> <span class="title">== null</span>) &#123;</span><br><span class="line">            return <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        // 左 -&gt; 中 -&gt; 右，中序遍历</span><br><span class="line">        boolean checkLeft = isValidBST(<span class="keyword">node</span>.<span class="title">left</span>);</span><br><span class="line">        boolean checkSelf;</span><br><span class="line">        if (previousNodeVal == null) &#123;</span><br><span class="line">            checkSelf = <span class="literal">true</span>;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // 当前节点大于上一个节点，说明</span><br><span class="line">            checkSelf = <span class="keyword">node</span>.<span class="title">val</span> &gt; previousNodeVal;</span><br><span class="line">        &#125;</span><br><span class="line">        // 将每次访问过的节点记录下来</span><br><span class="line">        previousNodeVal = <span class="keyword">node</span>.<span class="title">val</span>;</span><br><span class="line">        </span><br><span class="line">        boolean checkRight = isValidBST(<span class="keyword">node</span>.<span class="title">right</span>);</span><br><span class="line"></span><br><span class="line">        return checkLeft &amp;&amp; checkSelf &amp;&amp; checkRight;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p>这个没什么好说的，递归或者非递归的写法都行，思路就是根据目标相对于当前节点的大小来判断去左边还是右边找。</p>
+<ul>
+<li><a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank" rel="noopener">LeetCode 98. Validate Binary Search Tree</a> </li>
+</ul>
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>插入操作通常会有多个符合条件的结果，我通常用比较容易记忆的一种方案，就是根据需要插入的值不停的跟节点比较大小，一直找到某个节点的left或right为空的情况，然后创建一个节点放到对应的位置。</p>
+<ul>
+<li><a href="https://leetcode.com/problems/insert-into-a-binary-search-tree/" target="_blank" rel="noopener">LeetCode 701. Insert into a Binary Search Tree</a> </li>
+</ul>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>二搜索树的删除稍微复杂一些，因为删除节点后，需要维持二叉树的性质。删除节点分为几种情况，假设有这样一个二叉搜索树：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     <span class="number">4</span></span><br><span class="line">   /   \</span><br><span class="line">  <span class="number">2</span>     <span class="number">5</span></span><br><span class="line"> / \     \</span><br><span class="line"><span class="number">1</span>   <span class="number">3</span>     <span class="number">6</span></span><br></pre></td></tr></table></figure>
+
+<p>如果待删除节点有0个子树：例如我要删除节点6，直接删除即可，变成这样：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     <span class="number">4</span></span><br><span class="line">   /   \</span><br><span class="line">  <span class="number">2</span>     <span class="number">5</span></span><br><span class="line"> / \     </span><br><span class="line"><span class="number">1</span>   <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>如果待删除节点有1个子树：例如我要删除节点5，将5的子树6放到5原本的位置，删除5即可，变成这样：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     <span class="number">4</span></span><br><span class="line">   /   \</span><br><span class="line">  <span class="number">2</span>     <span class="number">6</span></span><br><span class="line"> / \      </span><br><span class="line"><span class="number">1</span>   <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>如果待删除节点有2个子树：例如我要删除节点4，这怎么办呢，常用的删除方法又有2种：</p>
+<ol>
+<li><strong>方法1</strong>：合并删除。找到待删除节点的左边最大值节点，这里是3，然后将待删除节点的右子树合并到3下面，变成： <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">2</span> </span><br><span class="line"> / \</span><br><span class="line"><span class="number">1</span>   <span class="number">3</span></span><br><span class="line">     \</span><br><span class="line">      <span class="number">5</span></span><br><span class="line">       \</span><br><span class="line">        <span class="number">6</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>方法2</strong>：复制删除。找到待删除节点左子树中的最大值，这里是3，复制到当前节点，这里是把4变成3，再删除被复制的节点，变成： <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     <span class="number">3</span></span><br><span class="line">   /   \</span><br><span class="line">  <span class="number">2</span>     <span class="number">5</span></span><br><span class="line"> /       \</span><br><span class="line"><span class="number">1</span>         <span class="number">6</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>可以看出来，方法1可能会导致树的平衡遭到破坏，这会降低二叉搜索树的效率。方法2会尽可能的维持原本的数高度，所以更推荐使用方法2删除节点。</p>
+<ul>
+<li><a href="https://leetcode.com/problems/delete-node-in-a-bst/" target="_blank" rel="noopener">LeetCode 450. Delete Node in a BST</a><blockquote>
+<p>思路虽然容易理解，但代码写起来还是有点麻烦的，建议上手练习一下。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h1><p>假设给一个有序数组建立二叉搜索树，比如 [1,2,3,4,5]，会变成这样：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"> \</span><br><span class="line">  <span class="number">2</span></span><br><span class="line">   \</span><br><span class="line">    <span class="number">3</span></span><br><span class="line">     \</span><br><span class="line">      <span class="number">4</span></span><br><span class="line">       \</span><br><span class="line">        <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p>这样的话二叉搜索树就变得不平衡，效率低下，所以大佬们想了很多方法来构建一个平衡的二叉搜索树，有：</p>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91" target="_blank" rel="noopener">红黑树(Red–black tree)</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/AVL%E6%A0%91" target="_blank" rel="noopener">AVL树(AVL tree)</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%A0%91%E5%A0%86" target="_blank" rel="noopener">数堆(Treap)</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%BC%B8%E5%B1%95%E6%A0%91" target="_blank" rel="noopener">伸展树(Splay tree)</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%8A%A0%E6%9D%83%E5%B9%B3%E8%A1%A1%E6%A0%91" target="_blank" rel="noopener">加权平衡树（Weight balanced tree）</a></li>
+<li>……</li>
+</ul>
+<p>这些离我们都比较遥远，很少会用到，只要有了解就可以了。</p>
+<p>里面稍微常见一点的是红黑树，红黑树具备这样的特征：</p>
+<ul>
+<li>节点是红色或黑色。</li>
+<li>根是黑色。</li>
+<li>所有叶子都是黑色（叶子是NIL节点）。</li>
+<li>每个红色节点必须有两个黑色的子节点。（从每个叶子到根的所有路径上不能有两个连续的红色节点。）</li>
+<li>从任一节点到其每个叶子的所有简单路径都包含相同数目的黑色节点。</li>
+</ul>
+<p>理解起来有点复杂，大家可以去google一下，有很多优秀的文章讲解。</p>
+<p>例如 </p>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91" target="_blank" rel="noopener">红黑树 - 维基百科</a></li>
+<li><a href="https://www.jianshu.com/p/e136ec79235c" target="_blank" rel="noopener">30张图带你彻底理解红黑树</a></li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/iamrain2008">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://www.linkedin.com/in/yufei-huang-13750993">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        <span>雨霏的朋友们</span>
+        <span>:</span>
+        
+        <span><a href="https://hakuless.github.io/" target="_blank" rel="noopener">HakuLess</a></span>
+        <span>/</span>
+        
+        <span><a href="https://kyangc.com/" target="_blank" rel="noopener">阿阳的自留地</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
