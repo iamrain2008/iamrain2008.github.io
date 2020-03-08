@@ -9,7 +9,6 @@ tags:
 date: 2020-02-09 23:20:52
 ---
 
-
 # 3种遍历顺序
 
 二叉树遍历算法，根据根节点相对于左节点、右节点的不同访问顺序，分为`前序遍历(Pre-Order Traversal)`、`中序遍历(In-Order Traversal)`、`后序遍历(Post-Order Traversal)`。
@@ -241,13 +240,3 @@ public int maxDepthBfs(TreeNode root) {
     return maxDepth;
 }
 ```
-
-# 特殊的二叉树
-
-## 二叉搜索树
-
-## 红黑树
-
-# 多叉树
-
-> 未完待续
