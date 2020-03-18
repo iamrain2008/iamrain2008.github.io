@@ -1,5 +1,5 @@
 ---
-title: Learning Breadth First Search
+title: 宽度优先搜索小结
 categories:
   - Algorithm
 tags:
@@ -62,14 +62,14 @@ date: 2020-03-14 16:18:16
 
 无向无权图：
 
-![UndirectedUnweightedGraph](../img/LearningBreadthFirstSearch-UndirectedUnweighted.png)
+![UndirectedUnweightedGraph](https://huangyufei.cn/img/LearningBreadthFirstSearch-UndirectedUnweighted.png)
 
 无向有权图：
 
-![UndirectedWeightedGraph](../img/LearningBreadthFirstSearch-UndirectedWeighted.png)
+![UndirectedWeightedGraph](https://huangyufei.cn/img/LearningBreadthFirstSearch-UndirectedWeighted.png)
 
 有向无权图：
-![DirectedUnweightedGraph](../img/LearningBreadthFirstSearch-DirectedUnweighted.png)
+![DirectedUnweightedGraph](https://huangyufei.cn/img/LearningBreadthFirstSearch-DirectedUnweighted.png)
 
 有向有权图：
 
@@ -129,6 +129,11 @@ public Node cloneGraph(Node node) {
 
 * [LeetCode 210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)
     > 课程表。经典拓扑排序问题，可以用宽搜解决。
+    > 拓扑排序的通用思路是：
+    <br />1.找出所有入度为0的节点，放入结果。
+    <br />2.将这些节点与邻居的边删除，这样它们的邻居的入度就会减少1。
+    <br />3.重复过程1，直到不能再继续。
+    <br />这时如果结果的数量与数据集数量一样，说明正常的完成了拓扑排序，否则说明有环，无法完成拓扑排序。
 
 ```
 public int[] findOrder(int numCourses, int[][] prerequisites) {
@@ -192,7 +197,7 @@ public int[] findOrder(int numCourses, int[][] prerequisites) {
 
 # 矩阵宽度优先搜索
 
-常有涉及矩阵搜索的题目，宽搜也经常应用。
+涉及矩阵搜索的题目，宽搜也经常应用。此类题目视情况用宽搜或深搜，思路就是把它当成图来处理，只是把图中的节点的表示方法换成了矩阵中的横竖坐标表示。
 
 * [LeetCode 200. Number of Islands](https://leetcode.com/problems/number-of-islands/)
     > 岛屿数量

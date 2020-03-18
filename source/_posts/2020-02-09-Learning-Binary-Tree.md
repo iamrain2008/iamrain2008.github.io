@@ -1,5 +1,5 @@
 ---
-title: 二叉树算法从入门到精通
+title: 二叉树算法总结
 categories:
   - Algorithm
 tags:
