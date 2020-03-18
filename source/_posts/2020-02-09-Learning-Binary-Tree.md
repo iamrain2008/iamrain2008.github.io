@@ -95,14 +95,14 @@ public void treeTraversal(TreeNode root) {
 
 # 2种遍历策略
 
-树的遍历分为深度优先遍历和广度优先遍历。
+树的遍历分为深度优先遍历和宽度优先遍历。
 
 ## 深度优先遍历
 
 深度优先(Depth First Search, DFS)的意思就是，先一条道走到黑，走到不能再走了，再回过头了遍历其他。
 下面用一个最简单的例子来说明不同的深度优先遍历。
 
-> [LeetCode 104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+* [LeetCode 104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 
 深度优先遍历大致分为递归实现和非递归实现，递归实现又分为分治法实现和遍历法实现。
 
@@ -159,7 +159,7 @@ public void calculateTreeDepth(TreeNode treeNode, int currentDepth) {
 ### 用非递归实现
 
 非递归（即迭代法）实现需要借助`栈`这个数据结构，实现方法比递归的麻烦一些，但很重要，一定要理解它的实现原理。
-还是以上面的计算树的最大深度为例子（其实更好的做法是广度优先遍历，这里只是为了展示非递归的实现）。
+还是以上面的计算树的最大深度为例子（其实更好的做法是宽度优先遍历，这里只是为了展示非递归的实现）。
 
 
 ```
@@ -195,9 +195,9 @@ public int maxDepthDfsNonRecursion(TreeNode root) {
 }
 ```
 
-## 广度优先遍历
+## 宽度优先遍历
 
-广度优先(Breadth First Search, BFS)的意思就是，优先遍历当前节点的所有子节点，不管子节点还有没有孙子节点。再一层一层向下遍历。
+宽度优先(Breadth First Search, BFS)的意思就是，优先遍历当前节点的所有子节点，不管子节点还有没有孙子节点。再一层一层向下遍历。
 
 通常需要借助`队列`来完成遍历，思路是：记录当前层的数量，开始遍历，将叶子节点放入队列，当遍历的数量等于当前层数量时，说明当前层已经遍历完了；检查队列是否为空，不为空说明还有下层，继续重复刚才的操作；知道全部遍历完成。
 
