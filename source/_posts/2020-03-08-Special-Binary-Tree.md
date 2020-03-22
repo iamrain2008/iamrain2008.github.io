@@ -3,6 +3,7 @@ title: 特殊的二叉树
 date: 2020-03-09 00:26:27
 categories:
   - Algorithm
+  - Data Structure
 tags:
   - binary tree
   - n-ary tree

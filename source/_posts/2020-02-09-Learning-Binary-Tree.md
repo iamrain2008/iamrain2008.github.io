@@ -2,6 +2,7 @@
 title: 二叉树算法总结
 categories:
   - Algorithm
+  - Data Structure
 tags:
   - binary tree
   - algorithm
