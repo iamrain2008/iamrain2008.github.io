@@ -1,32 +1,32 @@
 ---
-title: 'Java, Javascript, Python 常用数据结构总结'
+title: 'Java, JavaScript, Python 常用数据结构总结'
 categories:
   - Language
   - Algorithm
   - Data Structure
 tags:
   - Java
-  - Javascript
+  - JavaScript
   - Python
 date: 2020-03-22 15:23:28
 ---
 
 # 常用数据类型
 
-| Java| Javascript| Python
+| Java| JavaScript| Python
 | --- | --------- | ------
 | 整数类型：byte,short,int,long<br/>浮点数类型：float,double<br/>字符类型:char<br/>布尔类型:boolean | 数字(Number): 整数,小数<br/>任意精度整数(BigInt)：可处理大整数<br/>字符串(String)：一串字符序列<br/> 布尔值(Boolean):true / false<br/>undefined:未定义或不存在<br/>null:空值<br/>代表(Symbol):实例唯一且不可改变<br/>Object:狭义object,array,function | 数值：int,float,complex<br/>字符串：str（由Unicode构成的不可变序列）<br/>布尔值：True / False (它是int的子类型)<br/>空值：None<br/>序列类型：list,tuple<br/>集合类型：set,forzenset<br/>映射类型：dict
 
 注意事项：
 
-Javascript的数值都是64位存储，在某些特定的运算，如位运算时，才会将整数自动转成32位来计算。
+JavaScript的数值都是64位存储，在某些特定的运算，如位运算时，才会将整数自动转成32位来计算。
 
 Python 中的除法，`//`才是其他大多数语言中的`/`
 
 
 # 常用数据结构
 
-| Java | Javascript | Python |
+| Java | JavaScript | Python |
 | ---- | ---------- | ------ |
 | 数组: DataType[]<br/>List: ArrayList, LinkedList<br/>Map: HashMap, LinkedHashMap, TreeMap<br/>Set: HashSet, LinkedHashSet, TreeSet<br/>Stack:Stack<br/>Queue: LinkedList(Deque), PriorityQueue | 数组: Array<br/>Map: Map<br/>Set: Set<br/>Stack: 无<br/>Queue: 无 | 序列类型：list,tuple<br/>集合类型：set,forzenset<br/>映射类型：dict<br/>Stack: queue.LifoQueue<br/>Queue: queue.Queue, queue.PriorityQueue
 
@@ -67,9 +67,9 @@ Arrays.binarySearch() // 适用于有序数组
 // 非有序数组只能遍历或者转List等数据结构用它们的contains()方法
 ```
 
-### Javascript
+### JavaScript
 
-数组本质上是一种特殊的对象，可以参考[网道-Javascript教程-数组](https://wangdoc.com/javascript/types/array.html)
+数组本质上是一种特殊的对象，可以参考[网道-JavaScript教程-数组](https://wangdoc.com/JavaScript/types/array.html)
 
 ```
 // 声明方式
@@ -187,7 +187,7 @@ list.remove(Integer.valueOf(150));  // 直接写remove(100)会当成index处理�
 LinkedList<Integer> linkedList = new LinkedList<>();    // 内部以链表实现
 ```
 
-### Javascript
+### JavaScript
 
 同`Array`，见上一节`数组`。
 
@@ -228,7 +228,7 @@ for (String value : map.values()) {                     // 遍历值
 }
 ```
 
-### Javascript
+### JavaScript
 
 ```
 // 声明方法
@@ -314,6 +314,12 @@ for key,value in d.items(): // 遍历所有键值对
 
 ## 集合 Set
 
+
+集合间运算涉及到的一些名词，交集、并集应该好理解，相对补集、对称差可能不太好理解，这里附上一些资料：
+
+* [集合 - 补集](https://zh.wikipedia.org/wiki/%E8%A1%A5%E9%9B%86)
+* [集合 - 对称差](https://zh.wikipedia.org/wiki/%E5%AF%B9%E7%A7%B0%E5%B7%AE)
+
 ### Java
 
 ```
@@ -355,7 +361,7 @@ set1.addAll(set2);    // set1 = "A","B","C","D"
 set1.removeAll(set2); // set1 = "A"
 ```
 
-### Javascript
+### JavaScript
 
 ```
 // 声明
@@ -446,13 +452,6 @@ set4 & set5 # 交集 {'d', 'c'}
 set4 ^ set5 # 两个集合的对称差 {'e', 'b', 'a'}
 ```
 
-* 集合一些概念
-
-    * [集合 - 补集](https://zh.wikipedia.org/wiki/%E8%A1%A5%E9%9B%86)
-    * [集合 - 对称差](https://zh.wikipedia.org/wiki/%E5%AF%B9%E7%A7%B0%E5%B7%AE)
-
-交集、并集应该好理解，相对补集、对称差可能不太好理解，可以看下上面维基百科的详解。
-
 ## 栈 Stack
 
 ### Java
@@ -482,7 +481,7 @@ stack.empty();
 stack.size();
 ```
 
-### Javascript
+### JavaScript
 
 ```
 // 使用第三方或者自行基于数组等实现
@@ -543,7 +542,7 @@ peekLast(), pollLast(), offerFirst()等
 queue.peekLast();
 ```
 
-### Javascript
+### JavaScript
 
 ```
 // 没有现成的，只能自定义或使用第三方
