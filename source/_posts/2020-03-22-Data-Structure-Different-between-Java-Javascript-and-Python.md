@@ -28,7 +28,7 @@ Python 中的除法，`//`才是其他大多数语言中的`/`
 
 | Java | JavaScript | Python |
 | ---- | ---------- | ------ |
-| 数组: DataType[]<br/>List: ArrayList, LinkedList<br/>Map: HashMap, LinkedHashMap, TreeMap<br/>Set: HashSet, LinkedHashSet, TreeSet<br/>Stack:Stack<br/>Queue: LinkedList(Deque), PriorityQueue | 数组: Array<br/>Map: Map<br/>Set: Set<br/>Stack: 无<br/>Queue: 无 | 序列类型：list,tuple<br/>集合类型：set,forzenset<br/>映射类型：dict<br/>Stack: queue.LifoQueue<br/>Queue: queue.Queue, queue.PriorityQueue
+| 数组: DataType[]<br/>List: ArrayList, LinkedList<br/>Map: HashMap, LinkedHashMap, TreeMap<br/>Set: HashSet, LinkedHashSet, TreeSet<br/>Stack:Stack<br/>Queue: LinkedList(Deque), PriorityQueue | 数组: Array<br/>Map: Map<br/>Set: Set<br/>Stack: 无<br/>Queue: 无 | 序列类型：list,tuple<br/>集合类型：set,forzenset<br/>映射类型：dict<br/>Stack: queue.LifoQueue<br/>Queue: queue.Queue, queue.PriorityQueue, collections.deque
 
 ## 数组 Array
 
@@ -564,6 +564,22 @@ fifoQueue.put(3)
 fifoQueue.get()
 # 获取队列大小（多线程时不可靠）
 fifoQueue.qsize()
+
+
+# 双向队列。Deque 支持线程安全，内存高效添加(append)和弹出(pop)，
+# 从两端都可以，两个方向的大概开销都是 O(1) 复杂度
+from collections import deque
+d = deque()
+# 在右端增加元素
+d.append(1)  # 1,
+d.append(2)  # 1,2
+# 在左端增加元素
+d.appendleft(0)  # 0,1,2
+# 在末尾弹出元素
+d.pop()  # 0,1
+# 在队首弹出元素
+d.popleft()  # 1,
+
 
 # 声明优先队列
 priorityQueue = queue.PriorityQueue()
