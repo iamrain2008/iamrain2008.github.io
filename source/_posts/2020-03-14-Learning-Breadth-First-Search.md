@@ -26,7 +26,7 @@ date: 2020-03-14 16:18:16
 4    5 6    7
 ```
 
-我的遍历顺序是1->2->3->4->5->6->7，这就是一种宽度优先搜索。通常树的宽度优先搜索会使用`队列`来辅助，具体可以看之前的这篇文章[二叉树算法 - 广度优先遍历](https://huangyufei.cn/2020/Learning-Binary-Tree/#%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86)
+我的遍历顺序是1->2->3->4->5->6->7，这就是一种宽度优先搜索。通常树的宽度优先搜索会使用`队列`来辅助，具体可以看之前的这篇文章[二叉树算法 - 广度优先遍历](https://blog.huangyufei.com/2020/Learning-Binary-Tree/#%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86)
 
 树的宽度优先遍历通常用来解决
 
@@ -62,14 +62,14 @@ date: 2020-03-14 16:18:16
 
 无向无权图：
 
-![UndirectedUnweightedGraph](https://huangyufei.cn/img/LearningBreadthFirstSearch-UndirectedUnweighted.png)
+![UndirectedUnweightedGraph](https://blog.huangyufei.com/img/LearningBreadthFirstSearch-UndirectedUnweighted.png)
 
 无向有权图：
 
-![UndirectedWeightedGraph](https://huangyufei.cn/img/LearningBreadthFirstSearch-UndirectedWeighted.png)
+![UndirectedWeightedGraph](https://blog.huangyufei.com/img/LearningBreadthFirstSearch-UndirectedWeighted.png)
 
 有向无权图：
-![DirectedUnweightedGraph](https://huangyufei.cn/img/LearningBreadthFirstSearch-DirectedUnweighted.png)
+![DirectedUnweightedGraph](https://blog.huangyufei.com/img/LearningBreadthFirstSearch-DirectedUnweighted.png)
 
 有向有权图：
 
